@@ -1,0 +1,7 @@
+This works for compiling to single markdown document
+
+pandoc @(ls -r '.\The Urban Paradigm\*.md' | % { $_ }) -o mdcompiled.md -s -t markdown-smart --wrap=none --extract-media=. --atx-headers --reference-location=section --top-level-division=chapter
+
+This compiles to single Word document using template
+
+pandoc @(ls -r '.\The Urban Paradigm\*.md' | % { $_ }) -o Complete_Book.docx -s --toc --reference-doc=template.docx
