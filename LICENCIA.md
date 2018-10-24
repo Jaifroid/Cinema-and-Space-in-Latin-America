@@ -1,5 +1,4 @@
-﻿
-![cc.logo](./cc-logo.svg)
+# creative commons
 
 ## Atribución/Reconocimiento-CompartirIgual 4.0 Internacional
 
@@ -52,21 +51,35 @@ Al ejercer los Derechos Licenciados (definidos a continuación), Usted acepta y 
 ### Sección 2 -- Ámbito de Aplicación.
 
    a.  [__Otorgamiento de la licencia__.]{#s2a}
-​       1.  [Sujeto a los términos y condiciones de esta Licencia Pública, el Licenciante le otorga a Usted una licencia de carácter global, gratuita, no transferible a terceros, no exclusiva e irrevocable para ejercer los Derechos Licenciados sobre el Material Licenciado para:]{#s2a1}
-​           A.  [reproducir y Compartir el Material Licenciado, en su totalidad o en parte; y]{#s2a1A}
-​           B.  [producir, reproducir y Compartir Material Adaptado.]{#s2a1B}
-​       2.  [*Excepciones y Limitaciones*. Para evitar cualquier duda, donde se apliquen Excepciones y Limitaciones al uso del Material Licenciado, esta Licencia Pública no será aplicable, y Usted no tendrá necesidad de cumplir con sus términos y condiciones.]{#s2a2}
-​       3.  [*Vigencia*. La vigencia de esta Licencia Pública está especificada en la sección [6(a)](#s6a).]{#s2a3}
-​       4.  [*Medios y formatos; modificaciones técnicas permitidas*. El Licenciante le autoriza a Usted a ejercer los Derechos Licenciados en todos los medios y formatos, actualmente conocidos o por crearse en el futuro, y a realizar las modificaciones técnicas necesarias para ello. El Licenciante renuncia y/o se compromete a no hacer valer cualquier derecho o potestad para prohibirle a Usted realizar las modificaciones técnicas necesarias para ejercer los Derechos Licenciados, incluyendo las modificaciones técnicas necesarias para eludir las Medidas Tecnológicas Efectivas. A los efectos de esta Licencia Pública, la mera realización de modificaciones autorizadas por esta sección [2(a)(4)](#s2a4) nunca produce Material Adaptado.]{#s2a4}
-​       5.  [*Receptores posteriores*.]{#s2a5}
-​           A.  [*Oferta del Licenciante -- Material Licenciado*. Cada receptor de Material Licenciado recibe automáticamente una oferta del Licenciante para ejercer los Derechos Licenciados bajo los términos y condiciones de esta Licencia Pública.]{#s2a5A}
-​           B.  [*Oferta adicional por parte del Licenciante -- Material Adaptado*. Cada receptor del Material Adaptado por Usted recibe automáticamente una oferta del Licenciante para ejercer los Derechos Licenciados en el Material Adaptado bajo las condiciones de la Licencia del Adaptador que Usted aplique.]{#s2a5B}
-​           C.  [*Sin restricciones a receptores posteriores*. Usted no puede ofrecer o imponer ningún término ni condición diferente o adicional, ni puede aplicar ninguna Medida Tecnológica Efectiva al Material Licenciado si haciéndolo restringe el ejercicio de los Derechos Licenciados a cualquier receptor del Material Licenciado.]{#s2a5C}
-​       6.  [*Sin endoso*. Nada de lo contenido en esta Licencia Pública constituye o puede interpretarse como un permiso para afirmar o implicar que Usted, o que Su uso del Material Licenciado, está conectado, patrocinado, respaldado o reconocido con estatus oficial por el Licenciante u otros designados para recibir la Atribución/Reconocimiento según lo dispuesto en la sección [3(a)(1)(A)(i)](#s3a1Ai).]{#s2a6}
+
+   ​       1. [Sujeto a los términos y condiciones de esta Licencia Pública, el Licenciante le otorga a Usted una licencia de carácter global, gratuita, no transferible a terceros, no exclusiva e irrevocable para ejercer los Derechos Licenciados sobre el Material Licenciado para:]{#s2a1}
+
+   ​           A.  [reproducir y Compartir el Material Licenciado, en su totalidad o en parte; y]{#s2a1A}
+
+   ​           B.  [producir, reproducir y Compartir Material Adaptado.]{#s2a1B}
+
+   ​       2.  [*Excepciones y Limitaciones*. Para evitar cualquier duda, donde se apliquen Excepciones y Limitaciones al uso del Material Licenciado, esta Licencia Pública no será aplicable, y Usted no tendrá necesidad de cumplir con sus términos y condiciones.]{#s2a2}
+
+   ​       3.  [*Vigencia*. La vigencia de esta Licencia Pública está especificada en la sección [6(a)](#s6a).]{#s2a3}
+
+   ​       4.  [*Medios y formatos; modificaciones técnicas permitidas*. El Licenciante le autoriza a Usted a ejercer los Derechos Licenciados en todos los medios y formatos, actualmente conocidos o por crearse en el futuro, y a realizar las modificaciones técnicas necesarias para ello. El Licenciante renuncia y/o se compromete a no hacer valer cualquier derecho o potestad para prohibirle a Usted realizar las modificaciones técnicas necesarias para ejercer los Derechos Licenciados, incluyendo las modificaciones técnicas necesarias para eludir las Medidas Tecnológicas Efectivas. A los efectos de esta Licencia Pública, la mera realización de modificaciones autorizadas por esta sección [2(a)(4)](#s2a4) nunca produce Material Adaptado.]{#s2a4}
+
+   ​       5.  [*Receptores posteriores*.]{#s2a5}
+
+   ​           A.  [*Oferta del Licenciante -- Material Licenciado*. Cada receptor de Material Licenciado recibe automáticamente una oferta del Licenciante para ejercer los Derechos Licenciados bajo los términos y condiciones de esta Licencia Pública.]{#s2a5A}
+
+   ​           B.  [*Oferta adicional por parte del Licenciante -- Material Adaptado*. Cada receptor del Material Adaptado por Usted recibe automáticamente una oferta del Licenciante para ejercer los Derechos Licenciados en el Material Adaptado bajo las condiciones de la Licencia del Adaptador que Usted aplique.]{#s2a5B}
+
+   ​           C.  [*Sin restricciones a receptores posteriores*. Usted no puede ofrecer o imponer ningún término ni condición diferente o adicional, ni puede aplicar ninguna Medida Tecnológica Efectiva al Material Licenciado si haciéndolo restringe el ejercicio de los Derechos Licenciados a cualquier receptor del Material Licenciado.]{#s2a5C}
+
+   ​       6.  [*Sin endoso*. Nada de lo contenido en esta Licencia Pública constituye o puede interpretarse como un permiso para afirmar o implicar que Usted, o que Su uso del Material Licenciado, está conectado, patrocinado, respaldado o reconocido con estatus oficial por el Licenciante u otros designados para recibir la Atribución/Reconocimiento según lo dispuesto en la sección [3(a)(1)(A)(i)](#s3a1Ai).]{#s2a6}
 
    b. [__Otros derechos__.]{#s2b}
+
 ​       1.  [Los derechos morales, tales como el derecho a la integridad, no están comprendidos bajo esta Licencia Pública ni tampoco los derechos de publicidad y privacidad ni otros derechos personales similares. Sin embargo, en la medida de lo posible, el Licenciante renuncia y/o se compromete a no hacer valer ninguno de estos derechos que ostenta como Licenciante, limitándose a lo necesario para que Usted pueda ejercer los Derechos Licenciados, pero no de otra manera.]{#s2b1}
+
 ​       2.  [Los derechos de patentes y marcas no son objeto de esta Licencia Pública.]{#s2b2}
+
 ​       3.  [En la medida de lo posible, el Licenciante renuncia al derecho de cobrarle regalías a Usted por el ejercicio de los Derechos Licenciados, ya sea directamente o a través de una entidad de gestión colectiva bajo cualquier esquema de licenciamiento voluntario, renunciable o no renunciable. En todos los demás casos, el Licenciante se reserva expresamente cualquier derecho de cobrar esas regalías.]{#s2b3}
 
 ### Sección 3 -- Condiciones de la Licencia.
@@ -74,23 +87,36 @@ Al ejercer los Derechos Licenciados (definidos a continuación), Usted acepta y 
 Su ejercicio de los Derechos Licenciados está expresamente sujeto a las condiciones siguientes.
 
    a.  [__Atribución/Reconocimiento__.]{#s3a}
-​       1.  [Si Usted comparte el Material Licenciado (incluyendo en forma modificada), Usted debe:]{#s3a1}
-​           A.  [Conservar lo siguiente si es facilitado por el Licenciante con el Material Licenciado:]{#s3a1A}
-​               i.  [identificación del creador o los creadores del Material Licenciado y de cualquier otra persona designada para recibir Atribución/Reconocimiento, de cualquier manera razonable solicitada por el Licenciante (incluyendo por seudónimo si este ha sido designado);]{#s3a1Ai}
-​               ii. [un aviso sobre derecho de autor;]{#s3a1Aii}
-​               iii. [un aviso que se refiera a esta Licencia Pública;]{#s3a1Aiii}
-​               iv. [un aviso que se refiera a la limitación de garantías;]{#s3a1Aiv}
-​               v.  [un URI o un hipervínculo al Material Licenciado en la medida razonablemente posible;]{#s3a1Av}
-​           B.  [Indicar si Usted modificó el Material Licenciado y conservar una indicación de las modificaciones anteriores; e]{#s3a1B}
-​           C.  [Indicar que el Material Licenciado está bajo esta Licencia Pública, e incluir el texto, el URI o el hipervínculo a esta Licencia Pública.]{#s3a1C}
-​       2.  [Usted puede satisfacer las condiciones de la sección [3(a)(1)](#s3a1) de cualquier forma razonable según el medio, las maneras y el contexto en los cuales Usted Comparta el Material Licenciado. Por ejemplo, puede ser razonable satisfacer las condiciones facilitando un URI o un hipervínculo a un recurso que incluya la información requerida.]{#s3a2}
-​       3.  [Bajo requerimiento del Licenciante, Usted debe eliminar cualquier información requerida por la sección [3(a)(1)(A)](#s3a1A) en la medida razonablemente posible.]{#s3a3}
 
-   b.  [__CompartirIgual__.]{#s3b}
-​       Además de las condiciones de la sección [3(a)](#s3a), si Usted Comparte Material Adaptado producido por Usted, también aplican las condiciones siguientes.
-​       1.  [La Licencia del Adaptador que Usted aplique debe ser una licencia de Creative Commons con los mismos Elementos de la Licencia, ya sea de esta versión o una posterior, o una Licencia Compatible con la BY-SA.]{#s3b1}
-​       2.  [Usted debe incluir el texto, el URI o el hipervínculo a la Licencia del Adaptador que aplique. Usted puede satisfacer esta condición de cualquier forma razonable según el medio, las maneras y el contexto en los cuales Usted Comparta el Material Adaptado.]{#s3b2}
-​       3.  [Usted no puede ofrecer o imponer ningún término o condición adicional o diferente, o aplicar ninguna Medida Tecnológica Efectiva al Material Adaptado que restrinja el ejercicio de los derechos concedidos en virtud de la Licencia de Adaptador que Usted aplique.]{#s3b3}
+​      1.  [Si Usted comparte el Material Licenciado (incluyendo en forma modificada), Usted debe:]{#s3a1}
+
+​         A.  [Conservar lo siguiente si es facilitado por el Licenciante con el Material Licenciado:]{#s3a1A}
+
+​            i.  [identificación del creador o los creadores del Material Licenciado y de cualquier otra persona designada para recibir Atribución/Reconocimiento, de cualquier manera razonable solicitada por el Licenciante (incluyendo por seudónimo si este ha sido designado);]{#s3a1Ai}
+
+​            ii. [un aviso sobre derecho de autor;]{#s3a1Aii}
+
+​            iii. [un aviso que se refiera a esta Licencia Pública;]{#s3a1Aiii}
+
+​            iv. [un aviso que se refiera a la limitación de garantías;]{#s3a1Aiv}
+
+​            v.  [un URI o un hipervínculo al Material Licenciado en la medida razonablemente posible;]{#s3a1Av}
+
+​         B.  [Indicar si Usted modificó el Material Licenciado y conservar una indicación de las modificaciones anteriores; e]{#s3a1B}
+
+​         C.  [Indicar que el Material Licenciado está bajo esta Licencia Pública, e incluir el texto, el URI o el hipervínculo a esta Licencia Pública.]{#s3a1C}
+
+​      2.  [Usted puede satisfacer las condiciones de la sección [3(a)(1)](#s3a1) de cualquier forma razonable según el medio, las maneras y el contexto en los cuales Usted Comparta el Material Licenciado. Por ejemplo, puede ser razonable satisfacer las condiciones facilitando un URI o un hipervínculo a un recurso que incluya la información requerida.]{#s3a2}
+
+​      3.  [Bajo requerimiento del Licenciante, Usted debe eliminar cualquier información requerida por la sección [3(a)(1)(A)](#s3a1A) en la medida razonablemente posible.]{#s3a3}
+
+   b.  [__CompartirIgual__.]{#s3b} Además de las condiciones de la sección [3(a)](#s3a), si Usted Comparte Material Adaptado producido por Usted, también aplican las condiciones siguientes.
+
+​      1.  [La Licencia del Adaptador que Usted aplique debe ser una licencia de Creative Commons con los mismos Elementos de la Licencia, ya sea de esta versión o una posterior, o una Licencia Compatible con la BY-SA.]{#s3b1}
+
+​      2.  [Usted debe incluir el texto, el URI o el hipervínculo a la Licencia del Adaptador que aplique. Usted puede satisfacer esta condición de cualquier forma razonable según el medio, las maneras y el contexto en los cuales Usted Comparta el Material Adaptado.]{#s3b2}
+
+​      3.  [Usted no puede ofrecer o imponer ningún término o condición adicional o diferente, o aplicar ninguna Medida Tecnológica Efectiva al Material Adaptado que restrinja el ejercicio de los derechos concedidos en virtud de la Licencia de Adaptador que Usted aplique.]{#s3b3}
 
 ### Sección 4 -- Derechos \"Sui Generis\" sobre Bases de Datos.
 
@@ -117,7 +143,9 @@ Para evitar dudas, esta sección [4](#s4) complementa y no sustituye Sus obligac
    a.  [Esta Licencia Pública tiene una vigencia de aplicación igual al plazo de protección de los Derechos de Autor y Derechos Similares licenciados aquí. Sin embargo, si Usted incumple las condiciones de esta Licencia Pública, los derechos que se le conceden mediante esta Licencia Pública terminan automáticamente.]{#s6a}
 
    b.  [En aquellos casos en que Su derecho a utilizar el Material Licenciado se haya terminado conforme a la sección [6(a)](#s6a), este será restablecido:]{#s6b}
+
 ​      1.  [automáticamente a partir de la fecha en que la violación sea subsanada, siempre y cuando esta se subsane dentro de los 30 días siguientes a partir de Su descubrimiento de la violación; o]{#s6b1}
+
 ​      2.  [tras el restablecimiento expreso por parte del Licenciante.]{#s6b2}
    Para evitar dudas, esta sección [6(b)](#s6b) no afecta ningún derecho que pueda tener el Licenciante a buscar resarcimiento por Sus violaciones de esta Licencia Pública.
 

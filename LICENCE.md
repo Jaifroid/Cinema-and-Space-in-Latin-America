@@ -1,5 +1,4 @@
-﻿
-![cc.logo](./cc-logo.svg)
+# creative commons
 
 ## Attribution-ShareAlike 4.0 International
 
