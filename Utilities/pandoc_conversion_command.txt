@@ -1,3 +1,3 @@
-pandoc -s .\Cinematic_Labour.md --wrap=none --extract-media=. --atx-headers --top-level-division=chapter -f markdown -t markdown-smart -o Cinematic_Labour1.md
+pandoc -s .\Cinematic_Labour.md --wrap=none --extract-media=. --atx-headers --top-level-division=chapter --reference-location=section -f markdown -t markdown-smart -o Cinematic_Labour1.md
 // Split a converted file into separate files split at headings either # or ## (WSL)
 csplit Cinematic_Labour1.md /^##?\\s/ {*}

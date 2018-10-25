@@ -1,6 +1,5 @@
 ﻿param (
-    [Parameter(Mandatory=$True,Position=1)]
-    [string]$filename = $( Read-Host "Enter the filename or directory for processing: " ),
+    [string]$filename = "",
 	[int]$offset = 0,
 	[int]$steps = 5,
 	[switch]$pad = $false,
@@ -8,8 +7,57 @@
 	[switch]$quotes = $false,
 	[switch]$split = $false,
 	[switch]$linknotes = $false,
-	[switch]$todocx = $false
+	[switch]$todocx = $false,
+	[switch]$tomd = $false,
+	[switch]$help = $false
 )
+
+if (($filename -eq "") -and (! $help)) { 
+    $filename = Read-Host "Enter the filename or directory for processing, or type ? for help: "
+}
+
+# Display help options if user requested
+if (($filename -eq "?") -or ($help)) {
+@"
+
+Usage: .\panprocessor FILENAME or DIRECTORY [-offset num] [-steps num] [-pad]
+                [-renumber] [-quotes] [-split] [-linknotes] [-todocx] [-help]
+
+Uses pandoc to convert a Word file to markdown and optionally split it into
+numbered sections. Can also be used to compile a set of split markdown files
+either into a single markdown document, or into a Word document. Can be used to
+renumber all the files in a directory and subdirectories. Can also "tidy" a
+single markdown file. If the script is invoked with no options, it will prompt
+you to specify them as needed.
+
+FILENAME or      the filename or directory on which to operate (can use absolute
+  DIRECTORY      or relative path); if entering a filename, the script will 
+                 assume you wish to convert it to markdown; if a directory, it
+                 will assume you wish to compile split files to a document
+-offset num      when splitting files, provide an offset number to start from,
+                 otherwise it will start from 0
+-steps num       when spliiting files, specify the numbering step; this is
+                 useful if you need to re-order files manually later; default 5
+-pad             [switch]: if present, numbers will be padded with zeros, like
+                 01, 02, 03, or 010, 020, 030, etc., as needed; useful if your
+                 filesystem orders files ASCIIbetically rather than naturally
+-renumber        just renumbers files in directory or subdirectory using -offset
+                 -steps and -pad
+-quotes          if set, all single quotes will be converted to double
+-split           causes output files to be split into sections at secondary
+                 headers ##; files will be named by the first few letters of
+                 the header title
+-linknotes       if set, footnotes will be converted to ^[This is a footnote]
+                 style for ease of editing
+-todocx          specifies that a markdown document will be compiled to Word
+-tomd            specifies that a markdown document will be compiled to markdown
+-help or ?       prints these usage details
+                 
+"@
+    $input = Read-Host "Press any key to exit..."
+    exit
+}
+
 # If the path is a file, convert it or split it 
 if (Test-Path $filename -PathType leaf) {
     # Convert the file if it's a Word document
@@ -98,7 +146,7 @@ Do you want to split the file into smaller files on major headings
             $num = $i * $steps + $offset
             # Add leading zeros if user requested
             if ( $pad ) { $num = ([string]$num).PadLeft($padlength, "0") }
-            $sectionFilename = $filename -ireplace '^((?:[^/\\]*?[/\\])*)(.*?)\.([^.]*)$', "`$1§$num$prefix`_`$2.`$3"
+            $sectionFilename = $originalfile -ireplace '^((?:[^/\\]*?[/\\])*)(.*?)\.[^.]*$', "`$1§$num$prefix`_`$2.md"
             "Writing $sectionFilename ..."
             $section | Out-File -Encoding "UTF8" ($sectionFilename)
             # Save changes to master document
@@ -153,14 +201,14 @@ Please confirm you wish to renumber in steps of $steps, starting with $offset, a
         $outpath = $outfile + '\*.md'
         $outtype = ''
         $filter = ''
-        if ( ! $todocx) { 
+        if ((! $todocx) -or (! $tomd)) { 
             $input = Read-Host "Do you want to convert markdown files in this directory to Word ( $filename )? (Y/N): "
         } else { $input = "Y" }
-        if ( $input -ne "Y") { 
+        if (($tomd) -or ($input -ne "Y")) { 
             "Compiling to single markdown file ..."
             $outtype = '_compiled.md'
             $filter = 'markdown-smart'
-        } else {
+        } elseif (($todocx) -or ($input -eq "Y")) {
             "Compiling to single Word file ..."
             $outtype = '.docx'
             $filter = 'docx' 
@@ -170,8 +218,10 @@ Please confirm you wish to renumber in steps of $steps, starting with $offset, a
         $args1 = @('-o', $outfile, '-s', '-t', $filter, '--wrap=none', '--extract-media=.', '--atx-headers', '--reference-location=section', '--top-level-division=chapter', '--toc', '--reference-doc=template.docx')
         "Writing output to $outfile ..."
         # Sort-Object below ensures Natural Order instead of ASCIIbetical - see https://stackoverflow.com/questions/5427506
-        # & Write-Host @(ls -r $outpath | Sort-Object { [regex]::Replace($_.Name, '\d+', { $args[0].Value.PadLeft(20) }) } | % { $_ }) $args1
-        & pandoc @(ls -r $outpath | Sort-Object { [regex]::Replace($_.Name, '\d+', { $args[0].Value.PadLeft(20) }) } | % { $_ }) $args1
+        # & Write-Host @(ls -r $outpath | Sort-Object { [regex]::Replace($_, '§\d+', { $args[0].Value.PadLeft(20) }) } | % { $_ }) $args1
+        # NB Sorting by .Name as below causes them to be sorted without taking into account the path! 
+        # & Write-Host @(ls -r $outpath | Sort-Object { [regex]::Replace($_.Name, '§\d+', { $args[0].Value.PadLeft(20) }) } | % { $_ }) $args1
+        & pandoc @(ls -r $outpath | Sort-Object { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) } | % { $_ }) $args1
         "Done."
     } else { "Renumber operation aborted!" }
 } 
