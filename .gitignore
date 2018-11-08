@@ -2,6 +2,8 @@
 *.doc
 *.docx
 *_compiled.md
+*_master.md
+*_temp.md
 
 /Urban_Paradigm_sources
 /The Urban Paradigm.scrv
