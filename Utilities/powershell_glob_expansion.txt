@@ -5,3 +5,6 @@ pandoc @(ls -r '.\The Urban Paradigm\*.md' | % { $_ }) -o mdcompiled.md -s -t ma
 This compiles to single Word document using template
 
 pandoc @(ls -r '.\The Urban Paradigm\*.md' | % { $_ }) -o Complete_Book.docx -s --toc --reference-doc=template.docx
+
+Removing the BOM :
+ls -r '.\The Urban Paradigm\1.0 Chapter 1 - The Cinematic Labour of Affect\' *.md | % { [System.IO.File]::WriteAllLines($_.FullName, ((Get-Content $_.FullName) -replace "^\xEF\xBB\xBF", ""))}
