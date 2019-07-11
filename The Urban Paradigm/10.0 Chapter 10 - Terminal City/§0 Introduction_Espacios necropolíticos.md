@@ -8,4 +8,4 @@ We are all familiar with the neurological model of metropolitan modernity propos
  
 > Spinoza says that we do not know what the body is capable of. The foundation of needs and desire, of representations and concepts, the philosophical subject and object, and what is more (and better), the basis of all praxis and all reproduction: this human body resists the reproduction of oppressive relations—if not frontally, then obliquely. […] It is the body which is the point of return, the redress—not the Logos, nor “the human”. (Lefebvre, *The Survival of Capitalism*, p.89)
 
-My contention is that to understand the new forms of power and dereliction that are enacted through the human body under conditions of megapolitan life, it is no longer sufficient to evoke the body and its jouissance, or its schizophrenic stroll, as some last, essential or autopoeitic mode of resistance.
+My contention is that to understand the new forms of power and dereliction that are enacted through the human body under conditions of megapolitan life, it is no longer sufficient to evoke the body and its jouissance, or its schizophrenic stroll, as some final, autopoeitic mode of resistance.
