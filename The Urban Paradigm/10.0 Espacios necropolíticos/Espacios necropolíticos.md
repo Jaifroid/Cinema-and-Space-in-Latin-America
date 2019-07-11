@@ -36,3 +36,6 @@ El secreto de la protección ofrecida por el velo protector entonces, puede ser 
 
 Pero un momento, ¿esto no es contradictorio? ¿Por qué la protección de la auto-preservación tiene que tomar la forma negativa de *immunitas* en vez de la forma positiva de *communitas*? ¿Y no sería la *communitas* mejor analogía de la protección que ofrece el velo de María? Volveremos sobre este punto después de introducir el tercer término en esta articulación de cuerpo y poder: o sea, el espacio magapolitano.
 
+## Espacio absoluto y espacio abstracto
+
+Probablemente ya saben que tales evocaciones de unas alegorías espirituales o divinas más o menos explícitas abundan en las películas de Reygadas. La yuxtaposición violenta de lo sagrado y lo profano tiene alto abolengo en el cine mexicano, remontándose por lo menos a Buñuel, vía Ripstein, y, fuera del campo del cine, puede trazarse en un sinnúmero de corrientes literarias influidas por el catolicismo, en las cuales también se inspira Buñuel.
