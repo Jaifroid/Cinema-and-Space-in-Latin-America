@@ -42,4 +42,4 @@ Probablemente ya saben que tales evocaciones de unas alegorías espirituales o d
 
 CLIP 2 - Estación de servicio / Bach
 
-Las yuxtaposiciones espaciales en este clip se producen por el empleo de unas técnicas visuales y acústicas llamativas que dan un sentido casi alegórico a la disposición espacial de la ciudad.
+Las yuxtaposiciones espaciales en este clip se producen por el empleo de unas técnicas visuales y acústicas llamativas que dan un sentido casi alegórico a la disposición espacial de la ciudad. Primero que todo, habrán notado que el enfoque preciso sobre la parte posterior de la cabeza de Marcos dentro del carro, usando un objetivo gran angular, hace que todo lo que vemos por el parabrisas del carro mientras que Marcos se acerca a la estación de servicio, esté mal enfocado y borroso. Puesto que Marcos perdió sus gafas entre la masa de gente en el metro cuando iba a recoger a Ana del aeropuerto, estas formas borrosas son lo único que distingue del paisaje urbano que atraviesa. 
