@@ -38,4 +38,8 @@ Pero un momento, ¿esto no es contradictorio? ¿Por qué la protección de la au
 
 ## Espacio absoluto y espacio abstracto
 
-Probablemente ya saben que tales evocaciones de unas alegorías espirituales o divinas más o menos explícitas abundan en las películas de Reygadas. La yuxtaposición violenta de lo sagrado y lo profano tiene alto abolengo en el cine mexicano, remontándose por lo menos a Buñuel, vía Ripstein, y, fuera del campo del cine, puede trazarse en un sinnúmero de corrientes literarias influidas por el catolicismo, en las cuales también se inspira Buñuel.
+Probablemente ya saben que tales evocaciones de unas alegorías espirituales o divinas más o menos explícitas abundan en las películas de Reygadas. La yuxtaposición violenta de lo sagrado y lo profano tiene alto abolengo en el cine mexicano, remontándose por lo menos a Buñuel, vía Ripstein, y, fuera del campo del cine, puede trazarse en un sinnúmero de corrientes literarias influidas por el catolicismo, en las cuales también se inspira Buñuel. Reygadas, sin embargo, parece dar un grio espacial a tales yuxtaposiciones surreales. Veamos, pues, el segundo ejemplo, donde vemos a Marcos, el chófer de familia de Ana, la hija de un General del Ejército, quien le estaba haciendo una felación al principio de la película. Marcos lleva el carro a una estación de servicio, el no-lugar por antonomasia de Marc Augé, pero como ha perdido sus gafas, no enfoca bien la carretera.
+
+CLIP 2 - Estación de servicio / Bach
+
+Las yuxtaposiciones espaciales en este clip se producen por el empleo de unas técnicas visuales y acústicas llamativas que dan un sentido casi alegórico a la disposición espacial de la ciudad.
