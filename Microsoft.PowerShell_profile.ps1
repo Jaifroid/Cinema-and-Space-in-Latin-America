@@ -1,5 +1,32 @@
 ﻿# DEV: To reload this script after editing, issue ". $profile" at the PS commandline
 if (Get-Command 'panprocessor' -erroraction silentlycontinue) { "Reloading panprocessor..." }
+if (Get-Command 'Start-Pomodoro' -erroraction silentlycontinue) { "Reloading Start-Pomodoro..." }
+
+function Start-Pomodoro {
+
+    Param (
+        [int]$Minutes = 25
+    )
+ 
+    $seconds = $Minutes*60
+    $delay = 15 #seconds between ticks
+ 
+    for($i = $seconds; $i -gt 0; $i = $i - $delay)
+    {
+        $percentComplete = 100-(($i/$seconds)*100)
+        Write-Progress -SecondsRemaining $i `
+                       -Activity "Pomodoro" `
+                       -Status "Time remaining:" `
+                       -PercentComplete $percentComplete
+        Start-Sleep -Seconds $delay
+    }
+ 
+   # $player = New-Object System.Media.SoundPlayer "C:\Users\me\Dropbox\Music\CTU.wav"
+   # 1..6 | %{ $player.Play() ; sleep -m 1400 }
+    
+   1..10 | %{ [System.Media.SystemSounds]::Exclamation.Play() ; sleep -m 750 }
+}
+
 
 function panprocessor { 
 
