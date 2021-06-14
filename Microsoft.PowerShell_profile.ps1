@@ -88,7 +88,7 @@ if (($filename -eq "") -and (! $help)) {
         } else {
             "Operation cancelled!"
         }
-        exit
+        return
     }
 }
 
@@ -150,8 +150,37 @@ FILENAME or      the filename or directory on which to operate (can use absolute
                  
 "@
     $input = Read-Host "Press any key to exit..."
-    exit
+        return
+    }
+
+    function Transform-Quotations {
+        #param([string]$doc)
+        $doc = $script:document
+        if (! $quotes) { 
+            $quotes = Read-Host "Do you want to convert quotation marks? (S[ingle]/D[ouble]/N)"
+        }
+        if ($quotes -imatch '^[^n]') {
+            Write-Information "Converting quotation marks: $quotes ..." -InformationAction Continue 
+            # We first convert all quotes to double, even if user requested single, for consistency
+            # First-pass conversion: single to double (assumes pandoc has already converted quotes to smart)
+            $doc = $doc -creplace "([\W\D])‘(?!\d\ds)((?:[^’]|’(?=[\w\d])|’(?=[\s])(?<=\b\w\S+s’)(?=[^\n‘]*’[\W\D]))*)’", '$1“$2”'
+            #"$doc"
+            #Write-Information "Hi" -InformationAction Inquire
+            # $doc | Out-File -Encoding "UTF8" 'mytestfile.md'
+            # Second-pass conversion: looks for quotes-in-quotes
+            $doc = $doc -replace '(“[^“”]*)“([^“”]*)”', "`$1‘`$2’"
 }
+        if ($quotes -imatch '^s') {
+            # User requested conversion to single
+            # Conserve already found quotes-in-quotes with placeholders
+            $doc = $doc -creplace "([\W\D])‘(?!\d\ds)((?:[^’]|’(?=[\w\d])|’(?=[\s])(?<=\b\w\S+s’)(?=[^\n‘]*’[\W\D]))*)’", '$1“@@@$2”@@@'
+            $doc = $doc -replace '“(?!@@@)', "‘"
+            $doc = $doc -replace '”(?!@@@)', "’"
+            $doc = $doc -replace '([“”])@@@', '$1' 
+        }
+        return $doc
+        #Write-Information "Hi" -InformationAction Inquire 
+    }
 
 # If we are extracting from a master ToC, we need to check the file exists and extract the directory source
 if ($frommaster) {
@@ -165,11 +194,11 @@ if ($frommaster) {
                 % { $_.groups[1].value }
         } else {
             "Master document does not contain valid directory information!"
-            exit
+            return
         }
     } else {
         "Specified master document was not found! Please check your typing."
-        exit
+        return
     }
 }
 
@@ -207,7 +236,8 @@ $document = Get-Content -raw -Encoding "UTF8" $filename
         $document = $document -ireplace '\r?\n#{1,6}\s*?\r?\n', ''
         # Double blocking to single blocking
         $document = $document -ireplace '(\r?\n>\s?)>\s?([^\r\n])', '$1$2'
-
+            $document = Transform-Quotations
+            "$document"
         if (! $todocx) {
             $input = ""
             if ( ($linknotes)) { 
@@ -224,26 +254,7 @@ $document = Get-Content -raw -Encoding "UTF8" $filename
                 }
             }
         }
-        if (! $quotes) { 
-            $quotes = Read-Host "Do you want to convert quotation marks? (S[ingle]/D[ouble]/N)"
-        }
-        if ($quotes -imatch '^[^n]') {
-            "Converting quotation marks: $quotes ..." 
-            # We first convert all quotes to double, even if user requested single, for consistency
-            # First-pass conversion: single to double (assumes pandoc has already converted quotes to smart)
-            $document = $document -creplace "([\W\D])‘(?!\d\ds)((?:[^’]|’(?=[\w\d])|’(?=[\s])(?<=\b\w\S+s’)(?=[^\n‘]*’[\W\D]))*)’", '$1“$2”'
-            # $document | Out-File -Encoding "UTF8" 'mytestfile.md'
-            # Second-pass conversion: looks for quotes-in-quotes
-            $document = $document -replace '(“[^“”]*)“([^“”]*)”', "`$1‘`$2’"
-        }
-        if ($quotes -imatch '^s') {
-            # User requested conversion to single
-            # Conserve already found quotes-in-quotes with placeholders
-            $document = $document -creplace "([\W\D])‘(?!\d\ds)((?:[^’]|’(?=[\w\d])|’(?=[\s])(?<=\b\w\S+s’)(?=[^\n‘]*’[\W\D]))*)’", '$1“@@@$2”@@@'
-            $document = $document -replace '“(?!@@@)', "‘"
-            $document = $document -replace '”(?!@@@)', "’"
-            $document = $document -replace '([“”])@@@', '$1' 
-        }
+           
     }
     $input = ""
     if ((! $todocx) -and (! $split) -and (! $nosplit)) {
@@ -276,8 +287,7 @@ Do you want to split the file into smaller files on major headings
             $section = $section -ireplace '^§§§', ''
             $prefix = " "
             #if ($section -imatch '^##\s+([^\r\n.:\\/*?"<>|]{2,30})')
-            if ($section -imatch '^##\s+([^\r\n]{2,30})') 
-            {
+                if ($section -imatch '^##\s+([^\r\n]{2,30})') {
                 $prefix = ($prefix + $matches[1])
                 # Remove incompatible characters
                 $prefix = $prefix -replace '[.:\\/*?"<>|()[\]]', '-'
@@ -449,13 +459,35 @@ Do you want to convert markdown files listed in the master table of contents to 
                if ($library -ne "") {
                     $input = Read-Host "Do you want to format references using bibtex library? (Y/N): "
                     if ($input -eq "Y") { 
-                        $biblio = '--bibliography=' + "'" + $library + "'"
+                            $biblio = "--bibliography=$library"
                         "Writing $biblio..." 
                     }
                } 
             }
         }
-        #$mediadir = $outfile + '_files'
+            if ($quotes -imatch '^(s|d)') {
+                "Converting quotations in directory files to $quotes"
+                $table = @(ls -r -name $filename *.md | Sort-Object { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) })
+                $overwrite = Read-Host "Do you want to overwrite the original files? (Y/N): "
+                forEach  ($entry in $table) {
+                    "$entry"
+                    $InOutFile = $filename + $entry
+                    "$InOutFile"
+                    $foo = Read-Host "?"
+                    $global:document = Get-Content -raw -Encoding "UTF8" ($InOutFile)
+                    $document = Transform-Quotations
+                    "$document"
+                    $foo = Read-Host "?"
+                    if ($overwrite -imatch 'n') { $InOutFile = $InOutFile -replace '([^/\\]+\.md)$', '_$1' }
+                    if ($nobom) {
+                        "Writing with no BOM ..."
+                        [System.IO.File]::WriteAllLines(((Get-Item -Path ".\").FullName + $InOutFile), $document)
+                    }
+                    else {
+                        $document | Out-File -Encoding "UTF8Bom" ($InOutFile)
+                    }
+                }
+            }
         $outfile = $outfile + $outtype
         if (! $notoc) { $toc = '--toc' }
         #if ($outtype -imatch '\.docx$') { $shiftheaders = '--shift-heading-level-by=-1' }
@@ -479,7 +511,8 @@ Do you want to convert markdown files listed in the master table of contents to 
                 }
                 # Escape any parentheses
                 $entry = $entry 
-                "      + [$mainheader](" + (($entry -replace '.+\\([^\\]+)\.md$', '$1') -replace '([()])', '\$1') + ')'
+                    # "   + [$mainheader](" + (($entry -replace '.+\\([^\\]+)\.md$', '$1') -replace '([()])', '\$1') + ')'
+                    "   + [$mainheader](" + ((($filename + '\' + $entry) -replace '\\+', '/') -replace '([()])', '\$1') + ')'
                 # Find a text snippet
                 # Remove carriage returns except in headings
                 # $filecontent = $filecontent -replace '(?<!#[^\n]+)\r?\n(?!#)', ' '
