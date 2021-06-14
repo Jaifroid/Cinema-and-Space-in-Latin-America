@@ -1,4 +1,9 @@
-﻿param (
+﻿# DEV: To reload this script after editing, issue ". $profile" at the PS commandline
+if (Get-Command 'panprocessor' -erroraction silentlycontinue) { "Reloading panprocessor..." }
+
+function panprocessor { 
+
+param (
     [string]$filename = "",
 	[int]$offset = 0,
 	[int]$steps = 5,
@@ -112,7 +117,7 @@ FILENAME or      the filename or directory on which to operate (can use absolute
 -tomd            specifies that a markdown document will be compiled to markdown
 -nobom           writes utf8 files without a Byte Order Mark (BOM); on its own,
                  removes the BOM from all files in current directory tree
--addbom          adds a BOM to all files in current directory tree 
+-addbom          adds a BOM to all files in current directory tree
 -dumpargs        show the arguments pandoc is using
 -help or ?       prints these usage details
                  
@@ -276,8 +281,8 @@ Do you want to split the file into smaller files on major headings
         $toc = ""
         $input = ""
         if (! $notoc) {
-        $input = Read-Host "Do you want to add a table of contents to the converted Word document? (Y/N): "
-        if ($input -eq "Y") { $toc = '--toc' } 
+            $input = Read-Host "Do you want to add a table of contents to the converted Word document? (Y/N): "
+            if ($input -eq "Y") { $toc = '--toc' }
         }
         $input = ""
         if ($bib) {
@@ -299,7 +304,7 @@ Do you want to split the file into smaller files on major headings
            } 
         }
         $outfile = $originalfile -ireplace '\.[^.]+$', '.docx'
-        $filter = 'docx' 
+        $filter = 'docx'
         # $shiftheaders = '--shift-heading-level-by=-1' 
         $args1 = @('-o', $outfile, '-s', '-t', $filter, '--wrap=none', '--reference-doc=template.docx', $biblio, '--csl="' + $csl + '"')
         "Writing output to $outfile ..."
@@ -420,7 +425,7 @@ Do you want to convert markdown files listed in the master table of contents to 
                         $biblio = '--bibliography=' + "'" + $library + "'"
                         "Writing $biblio..." 
                     }
-        }
+               } 
             }
         }
         #$mediadir = $outfile + '_files'
@@ -473,7 +478,7 @@ Do you want to convert markdown files listed in the master table of contents to 
             }
         } elseif ($frommaster) {
             & pandoc @($sourcedocs | % { ls -r $filename ($_ + '.md') | % { $_.FullName } }) $args1 $toc $dump
-        } else {
+        } else { 
             # NB Sorting by .Name as below causes them to be sorted without taking into account the path! 
             # Write-Host @(ls -r $outpath | Sort-Object { [regex]::Replace($_.FullName, '\d+', { $args[0].Value.PadLeft(20) }) } | % { $_.FullName }) $args1
             & pandoc @(ls -r $outpath | Sort-Object { [regex]::Replace($_.FullName, '\d+', { $args[0].Value.PadLeft(20) }) } | % { $_.FullName }) $args1 $toc $resourcepath $dump
@@ -487,4 +492,7 @@ Do you want to convert markdown files listed in the master table of contents to 
         }
         "Done."
     } else { "Renumber operation aborted!" }
+} 
+
+
 }
